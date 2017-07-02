@@ -26,8 +26,7 @@
         <h1>Carousel</h1>
 		<h1>Carousel Yeaaahh!!!</h1>
       </header>
-
-    </div>
+	    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -35,5 +34,56 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     <script src="js/master.js" charset="utf-8"></script>
+	
+	
+	<div id="carousel" class="carousel">
+    <button class="arrow prev">⇦</button>
+    <div class="gallery">
+      <ul class="images">
+        <li><img alt="Burger King" src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/burgerking-130x100.png"</li>
+        <li><img alt="Starbucks" src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/starbucks-130x100.png"></li>
+        <li><img alt="Canon" src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/canon-130x100.png"></li>
+        <li><img alt="Sony" src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/sony-130x100.png"></li>
+        <li><img alt="RedBull" src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/redbull-130x100.png"></li>
+        <li><img alt="NFL" src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/nfl-130x100.png"></li>
+        <li><img alt="Harley Davidson" src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/harley-130x100.png"></li>
+        <li><img alt="Dell" src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/dell-130x100.png"></li>
+        <li><img alt="Disney" src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/disney-130x100.png"></li>
+        <li><img alt="Coca Cola" src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/cocacola-130x100.png"></li>
+		<li><img alt="Nintendo" src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/nintendo-130x100.png"></li>
+      </ul>
+    </div>
+    <button class="arrow next">⇨</button>
+
+
+  <script>
+    var lis = document.getElementsByTagName('li');
+    for (var i = 0; i < lis.length; i++) {
+      lis[i].style.position = 'relative';
+      var span = document.createElement('span');
+      span.style.cssText = 'position:absolute;left:0;top:0';
+      span.innerHTML = i + 1;
+      lis[i].appendChild(span);
+    }
+
+    var width = 130; 
+    var count = 1; 
+
+    var carousel = document.getElementById('carousel');
+    var list = carousel.querySelector('ul');
+    var listElems = carousel.querySelectorAll('li');
+
+    var position = 0; 
+
+    carousel.querySelector('.prev').onclick = function() {
+      position = Math.min(position + width * count, 0)
+      list.style.marginLeft = position + 'px';
+    };
+
+    carousel.querySelector('.next').onclick = function() {
+      position = Math.max(position - width * count, -width * (listElems.length - count));
+      list.style.marginLeft = position + 'px';
+    };
+  </script>
   </body>
 </html>

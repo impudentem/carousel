@@ -1,3 +1,70 @@
 .container {
   background-color: #ccc;
 }
+.carousel {
+  position: relative;
+  width: 858px;
+  padding: 10px 40px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  background: #fff;
+  margin:100px auto;
+}
+
+.carousel img {
+  width: 130px;
+  height: 100px;
+  display: block;
+}
+
+.arrow {
+  position: absolute;
+  top: 50px;
+  padding: 0;
+  background: #ddd;
+  border-radius: 15px;
+  border: 1px solid gray;
+  font-size: 24px;
+  line-height: 24px;
+  color: #444;
+  display: block;
+}
+
+.arrow:focus {
+  outline: none;
+}
+
+.arrow:hover {
+  background: #ccc;
+  cursor: pointer;
+}
+
+.prev {
+  left: 7px;
+}
+
+.next {
+  right: 7px;
+}
+
+.gallery {
+  width: 780px;
+  overflow: hidden;
+}
+
+.gallery ul {
+  height: 100px;
+  width: 9999px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: margin-left 250ms;
+  /* remove white-space between inline-block'ed li */
+  /* http://davidwalsh.name/remove-whitespace-inline-block */
+
+  font-size: 0;
+}
+
+.gallery li {
+  display: inline-block;
+}
